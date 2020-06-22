@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif; }
+
+#display {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 25%;
+  font-size: 2em;
+  padding: 2em;
+  height: 6em; }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 2em;
+  width: 25%; }
+  .wrapper div {
+    text-align: center;
+    padding: 1em; }
+
+.rose {
+  background-color: #F4B6CB; }
+
+.pink {
+  background-color: #CC768D; }
+
+.white {
+  background-color: #F3F4EE; }

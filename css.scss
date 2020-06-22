@@ -1,0 +1,35 @@
+$white : #F3F4EE;
+$rose :#F4B6CB;
+$pink :#CC768D;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+#display {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 25%;
+    font-size: 2em;
+    padding: 2em;
+    height: 6em;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    font-size: 2em;
+    width: 25%;
+    div {
+        text-align: center;
+        padding: 1em;
+    }
+}
+.rose {
+    background-color: $rose;
+}
+.pink {
+    background-color: $pink;
+}
+.white {
+    background-color: $white;
+}
