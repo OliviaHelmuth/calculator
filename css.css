@@ -5,19 +5,32 @@
 #display {
   display: grid;
   grid-template-columns: 1fr;
-  width: 25%;
+  width: 13.5em;
   font-size: 2em;
   padding: 2em;
-  height: 6em; }
+  height: 6em;
+  border-radius: 10px 10px 0px 0px; }
 
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   font-size: 2em;
-  width: 25%; }
+  width: 13.5em; }
   .wrapper div {
     text-align: center;
     padding: 1em; }
+  .wrapper .white:hover {
+    filter: brightness(95%); }
+  .wrapper .rose:hover {
+    filter: brightness(95%); }
+  .wrapper .pink:hover {
+    filter: brightness(95%); }
+
+#leftCorner {
+  border-radius: 0px 0px 0px 10px; }
+
+#rightCorner {
+  border-radius: 0px 0px 10px 0px; }
 
 .rose {
   background-color: #F4B6CB; }
