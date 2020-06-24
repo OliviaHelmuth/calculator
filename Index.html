@@ -16,8 +16,9 @@
     <div id="vueCalc">
         <div id="display" class="white">
 
-            <div><span>{{operator}}</span>{{currentVal}}</div>
-            <div>{{previousVal}}</div>
+            <div>{{previousVal}}<span>{{operator}}</span><span>{{currentVal}}</span></div>
+            <div>{{resultOutput}}</div>
+            <!-- <div>{{previousVal}}</div> -->
         </div>
         <div class="wrapper">
             <div @click="clearAll" class="rose">AC</div>

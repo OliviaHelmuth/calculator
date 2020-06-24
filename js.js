@@ -5,46 +5,61 @@ new Vue({
         previousVal: null,
         currentVal: null,
         operator: null,
+        result: null,
+        resultOutput: null,
+        computeCheck: false
     },
     methods: {
         getValue(e) {
+            if (this.computeCheck == true) {
+                this.currentVal = this.result;
+                this.computeCheck = false
+            }
             if (Number.isInteger(parseFloat(e.target.innerText)) || //check if its a number or a ,
                 e.target.innerText === ".") {
                 this.valArr.push(e.target.innerText);
                 this.currentVal = this.valArr.join("");
+                this.computeCheck = false
             }
             else {
                 this.previousVal = this.currentVal;
                 this.valArr = [];
                 this.currentVal = null;
                 this.operator = e.target.innerText;
+                this.computeCheck = false
             }
         },
         compute() {
             switch (this.operator) {
                 case "+":
-                    this.currentVal = parseFloat(this.previousVal) + parseFloat(this.currentVal);
+                    this.result = parseFloat(this.previousVal) + parseFloat(this.currentVal);
                     break;
                 case "-":
-                    this.currentVal = parseFloat(this.previousVal) - parseFloat(this.currentVal);
+                    this.result = parseFloat(this.previousVal) - parseFloat(this.currentVal);
                     break;
                 case "X":
-                    this.currentVal = parseFloat(this.previousVal) * parseFloat(this.currentVal);
+                    this.result = parseFloat(this.previousVal) * parseFloat(this.currentVal);
                     break;
                 case "/":
-                    this.currentVal = parseFloat(this.previousVal) / parseFloat(this.currentVal);
+                    this.result = parseFloat(this.previousVal) / parseFloat(this.currentVal);
                     break;
                 // the values are strings, but js automatically converts them into numbers while calculating, except with the + operator
             };
             // this.currentVal = this.currentVal.toString();
-            this.valArr = [this.currentVal];
-            this.operator = "=";
+            // this.currentVal = this.result;
+            this.valArr = [this.result];
+            this.resultOutput = "= " + this.result;
+            this.computeCheck = true
+            
+            // this.operator = "=";
         },
         clearAll() {
             this.valArr = [],
                 this.previousVal = null,
                 this.currentVal = null,
-                this.operator = null
+                this.operator = null,
+                this.result = null,
+                this.resultOutput = null
         },
         clearLastDigit() {
             this.valArr.pop();
