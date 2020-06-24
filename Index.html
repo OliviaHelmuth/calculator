@@ -14,34 +14,35 @@
 
 <body>
     <div id="vueCalc">
-    <div id="display" class="white">
-        <div>{{operator}}{{currentVal}}</div>
-        <div> {{previousVal}}</div>
+        <div id="display" class="white">
+
+            <div><span>{{operator}}</span>{{currentVal}}</div>
+            <div>{{previousVal}}</div>
+        </div>
+        <div class="wrapper">
+            <div @click="clearAll" class="rose">AC</div>
+            <div @click="clearLastDigit" class="rose">C</div>
+            <div @click="getValue" class="rose">%</div>
+            <div @click="getValue" class="rose">/</div>
+            <div @click="getValue" class="white">7</div>
+            <div @click="getValue" class="white">8</div>
+            <div @click="getValue" class="white">9</div>
+            <div @click="getValue" class="rose">X</div>
+            <div @click="getValue" class="white">4</div>
+            <div @click="getValue" class="white">5</div>
+            <div @click="getValue" class="white">6</div>
+            <div @click="getValue" class="rose">-</div>
+            <div @click="getValue" class="white">1</div>
+            <div @click="getValue" class="white">2</div>
+            <div @click="getValue" class="white">3</div>
+            <div @click="getValue" class="rose">+</div>
+            <div @click="getValue" class="white" id="leftCorner">0</div>
+            <div @click="getValue" class="white">00</div>
+            <div @click="getValue" class="rose">.</div>
+            <div @click="compute" class="pink" id="rightCorner">=</div>
+        </div>
     </div>
-    <div class="wrapper">
-        <div @click="clearAll" class="rose">AC</div>
-        <div @click="clearLastDigit" class="rose">C</div>
-        <div @click="getValue" class="rose">%</div>
-        <div @click="getValue" class="rose">/</div>
-        <div @click="getValue" class="white">7</div>
-        <div @click="getValue" class="white">8</div>
-        <div @click="getValue" class="white">9</div>
-        <div @click="getValue" class="rose">X</div>
-        <div @click="getValue" class="white">4</div>
-        <div @click="getValue" class="white">5</div>
-        <div @click="getValue" class="white">6</div>
-        <div @click="getValue" class="rose">-</div>
-        <div @click="getValue" class="white">1</div>
-        <div @click="getValue" class="white">2</div>
-        <div @click="getValue" class="white">3</div>
-        <div @click="getValue" class="rose">+</div>
-        <div @click="getValue" class="white" id="leftCorner">0</div>
-        <div @click="getValue" class="white">00</div>
-        <div @click="getValue" class="rose">.</div>
-        <div @click="compute" class="pink" id="rightCorner">=</div>
-    </div>
-</div>
-<script src="./js.js"></script>
+    <script src="./js.js"></script>
 </body>
 
 </html>

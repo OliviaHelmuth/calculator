@@ -4,10 +4,10 @@
 
 #display {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 2fr;
   width: 13.5em;
   font-size: 2em;
-  padding: 2em;
+  padding: 1em;
   height: 6em;
   border-radius: 10px 10px 0px 0px; }
 
