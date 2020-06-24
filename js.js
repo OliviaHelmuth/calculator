@@ -13,21 +13,19 @@ new Vue({
         getValue(e) {
             if (this.computeCheck == true) {
                 this.currentVal = this.result;
-                this.computeCheck = false
             }
             if (Number.isInteger(parseFloat(e.target.innerText)) || //check if its a number or a ,
                 e.target.innerText === ".") {
                 this.valArr.push(e.target.innerText);
                 this.currentVal = this.valArr.join("");
-                this.computeCheck = false
             }
             else {
                 this.previousVal = this.currentVal;
                 this.valArr = [];
                 this.currentVal = null;
                 this.operator = e.target.innerText;
-                this.computeCheck = false
-            }
+            };
+            this.computeCheck = false
         },
         compute() {
             switch (this.operator) {
@@ -40,18 +38,17 @@ new Vue({
                 case "X":
                     this.result = parseFloat(this.previousVal) * parseFloat(this.currentVal);
                     break;
-                case "/":
+                case "÷":
                     this.result = parseFloat(this.previousVal) / parseFloat(this.currentVal);
                     break;
+                case "%":
+                    this.result = parseFloat(this.previousVal) % parseFloat(this.currentVal);
+                    break
                 // the values are strings, but js automatically converts them into numbers while calculating, except with the + operator
             };
-            // this.currentVal = this.currentVal.toString();
-            // this.currentVal = this.result;
             this.valArr = [this.result];
             this.resultOutput = "= " + this.result;
             this.computeCheck = true
-            
-            // this.operator = "=";
         },
         clearAll() {
             this.valArr = [],

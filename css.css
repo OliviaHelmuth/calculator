@@ -2,14 +2,20 @@
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif; }
 
+#vueCalc {
+  padding: 4em;
+  display: flex;
+  justify-content: center; }
+
 #display {
   display: grid;
   grid-template-columns: 2fr;
   width: 13.5em;
   font-size: 2em;
-  padding: 1em;
+  padding: 1.5em;
   height: 6em;
-  border-radius: 10px 10px 0px 0px; }
+  border-radius: 10px 10px 0px 0px;
+  text-align: end; }
 
 .wrapper {
   display: grid;
