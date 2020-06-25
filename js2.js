@@ -6,7 +6,7 @@ new Vue({
         currentElement: [],
         result: null,
         computedResult: false,
-        alreadyAddedOperator: false
+        addedOperator: false
     },
     methods: {
         addToCurrentElement(e) {
@@ -14,22 +14,23 @@ new Vue({
             this.computedResult = false;
             const value = e.target.innerText;
             this.currentElement.push(value);
-            this.alreadyAddedOperator = false
+            this.addedOperator = false
         },
         addOperator(e) {
-            // if (this.alreadyAddedOperator == true ) return;
             this.checkForComputedResult();
             this.computedResult = false;
             this.addNumber();
             const operator = e.target.innerText;
             if (!this.numbers.length) {
-                this.currentElement.push(operator)
-                this.alreadyAddedOperator = true
+                if (operator == "-" || operator == "+") {
+                    this.currentElement.push(operator)
+                    this.addedOperator = true
+                }
             }
-            else if (!this.alreadyAddedOperator) {
+            else if (!this.addedOperator) {
                 this.operators.push(operator);
                 this.addNumber();
-                this.alreadyAddedOperator = true
+                this.addedOperator = true
             }
         },
         addNumber() {
@@ -46,39 +47,42 @@ new Vue({
             }
         },
         compute() {
-            this.addNumber();
-            let previousResult = 0;
-            for (let i = 0; i < this.operators.length; i++) {
-                let number1 = previousResult;
-                if (i == 0) {
-                    number1 = parseFloat(this.numbers[i])
-                }
-                const number2 = parseFloat(this.numbers[i + 1]);
-                const operator = this.operators[i];
-                let currentResult = 0;
+            if (this.addedOperator) return;
+            else {
+                this.addNumber();
+                let previousResult = 0;
+                for (let i = 0; i < this.operators.length; i++) {
+                    let number1 = previousResult;
+                    if (i == 0) {
+                        number1 = parseFloat(this.numbers[i])
+                    }
+                    const number2 = parseFloat(this.numbers[i + 1]);
+                    const operator = this.operators[i];
+                    let currentResult = 0;
 
-                switch (operator) {
-                    case "+":
-                        currentResult = number1 + number2;
-                        break;
-                    case "-":
-                        currentResult = number1 - number2;
-                        break;
-                    case "X":
-                        currentResult = number1 * number2;
-                        break;
-                    case "÷":
-                        currentResult = number1 / number2;
-                        break;
-                    case "%":
-                        currentResult = number1 % number2;
-                        break
+                    switch (operator) {
+                        case "+":
+                            currentResult = number1 + number2;
+                            break;
+                        case "-":
+                            currentResult = number1 - number2;
+                            break;
+                        case "X":
+                            currentResult = number1 * number2;
+                            break;
+                        case "÷":
+                            currentResult = number1 / number2;
+                            break;
+                        case "%":
+                            currentResult = number1 % number2;
+                            break
+                    }
+                    previousResult = currentResult;
                 }
-                previousResult = currentResult;
+                this.result = previousResult;
+                this.computedResult = true;
+                this.addedOperator = false
             }
-            this.result = previousResult;
-            this.computedResult = true;
-            this.alreadyAddedOperator = false
         },
         clearAll() {
             this.numbers = [],
