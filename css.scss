@@ -1,57 +1,66 @@
-$white : #F3F4EE;
-$rose :#F4B6CB;
-$pink :#CC768D;
-
+$white: #f3f4ee;
+$rose: #f4b6cb;
+$pink: #cc768d;
 * {
-    box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+html, body {
+  padding: 0;
+  margin: 0;
 }
 #vueCalc {
-   padding: 4em;
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 #display {
-    display: grid;
-    grid-template-columns: 2fr;
-    width: 13.5em;
-    font-size: 2em;
-    padding: 1.5em;
-    height: 6em;
-    border-radius: 10px 10px 0px 0px;
-    text-align: end;
+  display: grid;
+  grid-template-columns: 2fr;
+  width: 12em;
+  font-size: 2em;
+  padding: 1.5em;
+  height: 6em;
+  border-radius: 10px 10px 0px 0px;
+  text-align: end;
 }
 .wrapper {
-    display: grid;
-    grid-template-columns:repeat(4, 1fr);
-    font-size: 2em;
-    width: 13.5em;
-    div {
-        text-align: center;
-        padding: 1em;
-    }
-    .white:hover {
-        filter: brightness(95%);
-    }
-    .rose:hover {
-        filter: brightness(95%);
-    }    
-    .pink:hover {
-        filter: brightness(95%);
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 2em;
+  width: 12em;
+  div {
+    text-align: center;
+    padding: 1em;
+  }
+  .white:hover {
+    filter: brightness(95%);
+  }
+  .rose:hover {
+    filter: brightness(95%);
+  }
+  .pink:hover {
+    filter: brightness(95%);
+  }
 }
 #leftCorner {
-    border-radius: 0px 0px 0px 10px
+  border-radius: 0px 0px 0px 10px;
 }
 #rightCorner {
-    border-radius: 0px 0px 10px 0px
+  border-radius: 0px 0px 10px 0px;
 }
 .rose {
-    background-color: $rose;
+  background-color: $rose;
 }
 .pink {
-    background-color: $pink;
+  background-color: $pink;
 }
 .white {
-    background-color: $white;
+  background-color: $white;
+}
+@media (max-width: 1280px) {
+  #calcWrapper {
+    transform: scale(0.6)
+  }
 }

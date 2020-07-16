@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Quicksand:wght@300&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./css.css">
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Quicksand:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css.css" />
     <script src="./node_modules/vue/dist/vue.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="vueCalc">
-        <div>
-            <div id="display" class="white">
-                <div>
-                    <span>{{formula}}</span>
-                    <span>={{result}}</span>
-                </div>
-            </div>
-            <div class="wrapper">
-                <div @click="clearAll" class="rose">AC</div>
-                <div @click="" class="rose">C</div>
-                <div @click="addOperator" class="rose">%</div>
-                <div @click="addOperator" class="rose">÷</div>
-                <div @click="addToCurrentElement" class="white">7</div>
-                <div @click="addToCurrentElement" class="white">8</div>
-                <div @click="addToCurrentElement" class="white">9</div>
-                <div @click="addOperator" class="rose">X</div>
-                <div @click="addToCurrentElement" class="white">4</div>
-                <div @click="addToCurrentElement" class="white">5</div>
-                <div @click="addToCurrentElement" class="white">6</div>
-                <div @click="addOperator" class="rose">-</div>
-                <div @click="addToCurrentElement" class="white">1</div>
-                <div @click="addToCurrentElement" class="white">2</div>
-                <div @click="addToCurrentElement" class="white">3</div>
-                <div @click="addOperator" class="rose">+</div>
-                <div @click="addToCurrentElement" class="white" id="leftCorner">0</div>
-                <div @click="addToCurrentElement" class="white">00</div>
-                <div @click="addToCurrentElement" class="rose">.</div>
-                <div @click="compute" class="pink" id="rightCorner">=</div>
-            </div>
+      <div id="calcWrapper">
+        <div id="display" class="white">
+          <div>
+            <span>{{formula}}</span>
+            <span>={{result}}</span>
+          </div>
         </div>
+        <div class="wrapper">
+          <div @click="clearAll" class="rose">AC</div>
+          <div @click="" class="rose">C</div>
+          <div @click="addOperator" class="rose">%</div>
+          <div @click="addOperator" class="rose">÷</div>
+          <div @click="addToCurrentElement" class="white">7</div>
+          <div @click="addToCurrentElement" class="white">8</div>
+          <div @click="addToCurrentElement" class="white">9</div>
+          <div @click="addOperator" class="rose">X</div>
+          <div @click="addToCurrentElement" class="white">4</div>
+          <div @click="addToCurrentElement" class="white">5</div>
+          <div @click="addToCurrentElement" class="white">6</div>
+          <div @click="addOperator" class="rose">-</div>
+          <div @click="addToCurrentElement" class="white">1</div>
+          <div @click="addToCurrentElement" class="white">2</div>
+          <div @click="addToCurrentElement" class="white">3</div>
+          <div @click="addOperator" class="rose">+</div>
+          <div @click="addToCurrentElement" class="white" id="leftCorner">
+            0
+          </div>
+          <div @click="addToCurrentElement" class="white">00</div>
+          <div @click="addToCurrentElement" class="rose">.</div>
+          <div @click="compute" class="pink" id="rightCorner">=</div>
+        </div>
+      </div>
     </div>
     <script src="./js2.js"></script>
-</body>
-
+  </body>
 </html>
