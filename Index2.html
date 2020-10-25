@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Quicksand:wght@300&display=swap"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Quicksand:wght@300&display=swap"
+    rel="stylesheet"
     />
     <link rel="stylesheet" href="./css.css" />
     <script src="./node_modules/vue/dist/vue.js"></script>
   </head>
 
   <body>
-    <div id="vueCalc">
+    <div id="vueCalc2">
       <div id="calcWrapper">
         <div id="display" class="white">
           <div>
@@ -22,8 +22,8 @@
           </div>
         </div>
         <div class="wrapper">
-          <div @click="clearAll" class="rose">AC</div>
-          <div @click="" class="rose">C</div>
+          <div @click="clearAll" class="rose" id="clearBtn">AC</div>
+          <div @click="" class="rose" id="hiddenBtn"></div>
           <div @click="addOperator" class="rose">%</div>
           <div @click="addOperator" class="rose">÷</div>
           <div @click="addToCurrentElement" class="white">7</div>

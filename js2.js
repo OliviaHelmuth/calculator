@@ -1,5 +1,5 @@
 new Vue({
-    el: "#vueCalc",
+    el: "#vueCalc2",
     data: {
         numbers: [],
         operators: [],
@@ -47,6 +47,10 @@ new Vue({
             }
         },
         compute() {
+            if (this.currentElement && this.numbers.length == 0) {
+                this.result = this.currentElement.join("");
+                return
+              } 
             if (this.addedOperator) return;
             else {
                 this.addNumber();

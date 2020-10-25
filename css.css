@@ -1,16 +1,20 @@
 * {
   box-sizing: border-box;
-  font-family: "Quicksand", sans-serif; }
+  font-family: "Quicksand", sans-serif;
+}
 
-html, body {
+html,
+body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
-#vueCalc {
+#vueCalc2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; }
+  height: 100vh;
+}
 
 #display {
   display: grid;
@@ -20,38 +24,57 @@ html, body {
   padding: 1.5em;
   height: 6em;
   border-radius: 10px 10px 0px 0px;
-  text-align: end; }
+  text-align: end;
+}
 
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   font-size: 2em;
-  width: 12em; }
-  .wrapper div {
-    text-align: center;
-    padding: 1em; }
-  .wrapper .white:hover {
-    filter: brightness(95%); }
-  .wrapper .rose:hover {
-    filter: brightness(95%); }
-  .wrapper .pink:hover {
-    filter: brightness(95%); }
+  width: 12em;
+}
+.wrapper div {
+  text-align: center;
+  padding: 1em;
+}
+.wrapper .white:hover {
+  filter: brightness(95%);
+}
+.wrapper .rose:hover {
+  filter: brightness(95%);
+}
+.wrapper .pink:hover {
+  filter: brightness(95%);
+}
 
 #leftCorner {
-  border-radius: 0px 0px 0px 10px; }
+  border-radius: 0px 0px 0px 10px;
+}
 
 #rightCorner {
-  border-radius: 0px 0px 10px 0px; }
+  border-radius: 0px 0px 10px 0px;
+}
 
 .rose {
-  background-color: #f4b6cb; }
+  background-color: #f4b6cb;
+}
 
 .pink {
-  background-color: #cc768d; }
+  background-color: #cc768d;
+}
 
 .white {
-  background-color: #f3f4ee; }
+  background-color: #f3f4ee;
+}
 
 @media (max-width: 1280px) {
   #calcWrapper {
-    transform: scale(0.6); } }
+    transform: scale(0.6);
+  }
+}
+#clearBtn {
+  width: 200%;
+}
+#hiddenBtn {
+  visibility: hidden;
+}
